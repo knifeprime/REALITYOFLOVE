@@ -1,0 +1,133 @@
+/*-----------------------------------*\
+  #BACKGROUND.CSS - Animated Backgrounds
+\*-----------------------------------*/
+
+/* Animated background container */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+/* Light mode gradient background */
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  width: 400%;
+  height: 400%;
+  background: linear-gradient(
+    45deg,
+    rgba(16, 185, 129, 0.1) 0%,
+    rgba(245, 158, 11, 0.08) 25%,
+    rgba(239, 68, 68, 0.06) 50%,
+    rgba(16, 185, 129, 0.1) 75%,
+    rgba(245, 158, 11, 0.08) 100%
+  );
+  animation: gradientShift 15s ease infinite;
+  filter: blur(50px);
+}
+
+/* Dark mode gradient background */
+[data-theme="dark"] .animated-bg::before {
+  background: linear-gradient(
+    45deg,
+    rgba(52, 211, 153, 0.1) 0%,
+    rgba(251, 191, 36, 0.08) 25%,
+    rgba(248, 113, 113, 0.06) 50%,
+    rgba(52, 211, 153, 0.1) 75%,
+    rgba(251, 191, 36, 0.08) 100%
+  );
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+[data-theme="dark"] .particle {
+  mix-blend-mode: overlay;
+  opacity: 0.3;
+}
+
+.particle:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+  top: -150px;
+  left: -150px;
+  animation: floatParticle 20s infinite linear;
+}
+
+.particle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+  top: 20%;
+  right: -100px;
+  animation: floatParticle 25s infinite linear reverse;
+  animation-delay: 3s;
+}
+
+.particle:nth-child(3) {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, transparent 70%);
+  bottom: 10%;
+  left: 10%;
+  animation: floatParticle 30s infinite linear;
+  animation-delay: 6s;
+}
+
+.particle:nth-child(4) {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+  bottom: -90px;
+  right: 10%;
+  animation: floatParticle 22s infinite linear reverse;
+  animation-delay: 9s;
+}
+
+/* Dark mode particles */
+[data-theme="dark"] .particle:nth-child(1) {
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.25) 0%, transparent 70%);
+}
+
+[data-theme="dark"] .particle:nth-child(2) {
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
+}
+
+[data-theme="dark"] .particle:nth-child(3) {
+  background: radial-gradient(circle, rgba(248, 113, 113, 0.15) 0%, transparent 70%);
+}
+
+[data-theme="dark"] .particle:nth-child(4) {
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, transparent 70%);
+}
+
+/* Reduce animations on low-end devices */
+@media (prefers-reduced-motion: reduce) {
+  .animated-bg::before,
+  .particle {
+    animation: none;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+  .particle:nth-child(1),
+  .particle:nth-child(2),
+  .particle:nth-child(3),
+  .particle:nth-child(4) {
+    opacity: 0.15;
+  }
+}

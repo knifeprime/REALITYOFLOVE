@@ -1,0 +1,229 @@
+/*-----------------------------------*\
+  #ANIMATIONS.CSS - Keyframes & Effects
+\*-----------------------------------*/
+
+/* Fade in animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
+
+/* Background animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(100px, -100px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50px, -150px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(150px, -50px) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+  }
+}
+
+/* Text reveal animations */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underlineGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Scroll progress animation */
+@keyframes progressBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--scroll-progress, 0);
+  }
+}
+
+/* Hover effects */
+@keyframes hoverLift {
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Reveal animations for elements */
+.reveal {
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.reveal.visible {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.reveal-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.reveal-left.visible {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.reveal-right {
+  animation: slideInRight 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.reveal-right.visible {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.reveal-scale {
+  animation: scaleIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.reveal-scale.visible {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Stagger effect for lists */
+.stagger-item {
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0s; }
+.stagger-item:nth-child(2) { animation-delay: 0.1s; }
+.stagger-item:nth-child(3) { animation-delay: 0.2s; }
+.stagger-item:nth-child(4) { animation-delay: 0.3s; }
+.stagger-item:nth-child(5) { animation-delay: 0.4s; }
+.stagger-item:nth-child(n+6) { animation-delay: 0.5s; }
+
+.stagger-item.visible {
+  opacity: 1;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -14,9 +14,9 @@
 
 
   <!-- 
-    - custom css link
+    - custom css links - Modern Design System
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
 
   <!-- 
     - google font link
@@ -26,9 +26,19 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
     rel="stylesheet">
+
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
+
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
 
   <!-- 
     - #HEADER
@@ -123,20 +133,20 @@
         - #HERO
       -->
 
-      <section class="hero" id="home">
+      <section class="hero" id="home" data-reveal="slideInUp">
         <div class="container">
 
-          <p class="section-subtitle">
+          <p class="section-subtitle" data-reveal="slideInUp" style="animation-delay: 0.1s;">
             <img src="./assets/images/subtitle-img-white.png" width="32" height="7" alt="Wavy line">
 
             <span>Welcome to the Reality Of Love Foundation</span>
           </p>
 
-          <h2 class="h1 hero-title">
+          <h2 class="h1 hero-title" data-reveal="slideInUp" style="animation-delay: 0.2s;">
             Give Love for Saving <strong>The Physically challenged</strong>
           </h2>
 
-          <p class="hero-text">
+          <p class="hero-text" data-reveal="slideInUp" style="animation-delay: 0.3s;">
             Here is home.
 To love, nurture and grow.
 Lift the physical challenged persons.
@@ -157,12 +167,12 @@ Together let's restore hope and value.
         - #FEATURES
       -->
 
-      <section class="section features">
+      <section class="section features" data-reveal="slideInUp">
         <div class="container">
 
-          <ul class="features-list">
+          <ul class="features-list" data-stagger>
 
-            <li class="features-item">
+            <li class="features-item" data-stagger-item data-reveal="slideInUp">
               <div class="item-icon">
                 <ion-icon name="shield-checkmark-outline"></ion-icon>
               </div>
@@ -179,7 +189,7 @@ Together let's restore hope and value.
               </div>
             </li>
 
-            <li class="features-item">
+            <li class="features-item" data-stagger-item data-reveal="slideInUp">
               <div class="item-icon">
                 <ion-icon name="water-outline"></ion-icon>
               </div>
@@ -193,7 +203,7 @@ Together let's restore hope and value.
               </div>
             </li>
 
-            <li class="features-item">
+            <li class="features-item" data-stagger-item data-reveal="slideInUp">
               <div class="item-icon">
                 <ion-icon name="leaf-outline"></ion-icon>
               </div>
@@ -204,21 +214,19 @@ Together let's restore hope and value.
                 <p class="item-text">
                  Medical Support is at the heart of our mission to make healthcare accessible to all. Through partnerships, outreach programs, and advocacy efforts, we aim to improve healthcare access and outcomes for underserved communities. Together, let's build a healthier, more equitable world.
                 </p>
-				 <li class="features-item">
+              </div>
+            </li>
+
+            <li class="features-item" data-stagger-item data-reveal="slideInUp">
               <div class="item-icon">
                 <ion-icon name="school-outline"></ion-icon>
               </div>
-				<div>
+              <div>
                 <h3 class="h4 item-title">Educational empowerment</h3>
 
                 <p class="item-text">
                  Educational Empowerment is central to our mission. By fostering learning environments, providing resources, and empowering educators, we strive to ensure every child has access to quality education and opportunities for a brighter future.
                 </p>
-              </div>
-            </li>
-
-            
-               
               </div>
             </li>
 
@@ -235,7 +243,7 @@ Together let's restore hope and value.
         - #ABOUT
       -->
 
-      <section class="section about" id="about">
+      <section class="section about" id="about" data-reveal="slideInUp">
         <div class="container">
 
           <div class="about-banner">
@@ -355,7 +363,7 @@ Together let's restore hope and value.
         - #CTA
       -->
 
-      <section class="section cta">
+      <section class="section cta" data-reveal="slideInUp">
         <div class="container">
 
           <div class="cta-content">
@@ -411,7 +419,7 @@ Together let's restore hope and value.
         - #TESTIMONIALS
       -->
 
-      <section class="testi">
+      <section class="testi" data-reveal="slideInUp">
 
         <div class="testi-content">
 
@@ -460,7 +468,7 @@ Together let's restore hope and value.
         - #PARTNER
       -->
 
-      <section class="section partner">
+      <section class="section partner" data-reveal="slideInUp">
         <div class="container">
 
           <a href="#" class="partner-logo">
@@ -742,15 +750,18 @@ Together let's restore hope and value.
 
 
   <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
+    - Ionicon library
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- 
+    - Custom JS Modules (Modern Design System)
+  -->
+  <script src="./assets/js/theme.js"></script>
+  <script src="./assets/js/cursor.js"></script>
+  <script src="./assets/js/scroll.js"></script>
+  <script src="./assets/js/animations.js"></script>
 
 </body>
 

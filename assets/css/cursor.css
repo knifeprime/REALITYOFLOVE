@@ -1,0 +1,95 @@
+/*-----------------------------------*\
+  #CURSOR.CSS - Custom Cursor Styles
+\*-----------------------------------*/
+
+/* Hide default cursor */
+html {
+  cursor: none;
+}
+
+/* Custom cursor element */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  transition: all 0.1s ease-out;
+  mix-blend-mode: screen;
+}
+
+[data-theme="dark"] .custom-cursor {
+  background: var(--color-accent);
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.8);
+}
+
+/* Cursor trail effect */
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+[data-theme="dark"] .cursor-trail {
+  background: var(--color-accent);
+  opacity: 0.6;
+}
+
+/* Cursor hover states */
+.custom-cursor.hover {
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.8), inset 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+[data-theme="dark"] .custom-cursor.hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 1), inset 0 0 15px rgba(251, 191, 36, 0.5);
+}
+
+/* Cursor click effect */
+.custom-cursor.click {
+  transform: translate(-50%, -50%) scale(0.8);
+  animation: pulse 0.4s ease-out;
+}
+
+/* Hide cursor on mobile */
+@media (max-width: 640px) {
+  html {
+    cursor: auto;
+  }
+  
+  .custom-cursor,
+  .cursor-trail {
+    display: none;
+  }
+}
+
+/* Interactive element feedback */
+a, button, .clickable {
+  /* Custom cursor will scale on hover */
+}
+
+/* Text selection cursor */
+::selection {
+  background: var(--color-primary);
+  color: var(--bg-primary);
+}
+
+[data-theme="dark"] ::selection {
+  background: var(--color-accent);
+}
