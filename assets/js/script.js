@@ -41,9 +41,10 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all reveal elements
-document.querySelectorAll('.reveal, .reveal-stagger, .features-item, .event-card, .testi-card').forEach((el) => {
-  el.classList.add('reveal-stagger');
-  observer.observe(el);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-reveal], .reveal, .reveal-stagger, .features-item, .event-card, .testi-card, .section').forEach((el) => {
+    observer.observe(el);
+  });
 });
 
 // ===== HEADER SCROLL EFFECT =====
@@ -122,7 +123,7 @@ const createScrollProgressBar = () => {
       top: 0;
       left: 0;
       height: 3px;
-      background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+      background: linear-gradient(90deg, #1e3a2f, #d4af37);
       z-index: 1001;
       transition: width 0.2s ease;
       width: 0%;
@@ -188,14 +189,9 @@ function handleSwipe() {
   }
 }
 
-// ===== PAGE LOAD ANIMATIONS =====
+// ===== PAGE LOAD COMPLETE =====
 window.addEventListener('load', () => {
-  // Trigger reveals on page load
-  document.querySelectorAll('.reveal-stagger').forEach((el, index) => {
-    setTimeout(() => {
-      el.classList.add('active');
-    }, index * 50);
-  });
+  console.log('[v0] Page fully loaded and animations initialized!');
 });
 
 // ===== ADD ANIMATION KEYFRAMES DYNAMICALLY =====
@@ -314,4 +310,4 @@ if ('IntersectionObserver' in window) {
 }
 
 // ===== CONSOLE LOG =====
-console.log('[v0] Modern redesign with dark mode, animations, and custom cursor loaded successfully!');
+console.log('[v0] Premium professional design with animations, dark mode, and custom interactions loaded!');
